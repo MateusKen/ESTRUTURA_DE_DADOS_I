@@ -1,6 +1,6 @@
 //Etapa de Parentização da expressão
 	public static <T> String ConvertePosfixa(String exp) {
-		Pilha<T> pilha1 = new Pilha<T>();
+		Pilha<Character> pilha1 = new Pilha<Character>();
 		String expConvertida = "";
 	
 		for (int i = 0; i < exp.length(); i++) { 
