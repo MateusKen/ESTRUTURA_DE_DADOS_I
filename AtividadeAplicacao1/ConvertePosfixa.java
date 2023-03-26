@@ -1,5 +1,5 @@
 //Etapa de Parentização da expressão
-	public static <T> String ConvertePosfixa(String exp) {
+	public static String ConvertePosfixa(String exp) {
 		Pilha<Character> pilha1 = new Pilha<Character>();
 		String expConvertida = "";
 	
