@@ -1,4 +1,4 @@
-//Etapa de Parentização da expressão
+//Etapa de parentização e conversão da expressão
 	public static String ConvertePosfixa(String exp) {
 		Pilha<Character> pilha1 = new Pilha<Character>();
 		String expConvertida = "";
