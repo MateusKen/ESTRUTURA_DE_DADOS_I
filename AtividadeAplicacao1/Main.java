@@ -183,7 +183,7 @@ class Main {
         System.out.println("Leitura infixa");
         System.out.print("\nDigite a expressão matemática em notação infixa: ");
         expressao = s.nextLine();
-        flag = validaExp(expressao);
+        flag = validaExp(expressao); // flag para dizer se a expressão é valida ou nao
         valorVariaveis.clear(); //limpa o dicionário
         //op.clear();  //limpa a pilha
         //variaveis.clear();  //limpa a pilha
@@ -191,7 +191,7 @@ class Main {
         break;
         
       case 2:
-        if (flag != false){
+        if (flag != false){ // não faz a opção caso a flag seja falsa
         System.out.println("Entrada de Variáveis");
           for (int i = 0; i < expressao.length(); i++){ // for que percorre cada char da expressao 
           if (operacoes.indexOf(expressao.charAt(i)) == -1){ // "se o char não estiver em operacoes" 
@@ -199,15 +199,13 @@ class Main {
               continue;
             System.out.printf("\nQual o valor de %c? ", expressao.charAt(i));
             int valor = s.nextInt();
-            valorVariaveis.put(expressao.charAt(i), valor);
-            //  (A+B)/(C-D)*E
-            //{A=7, B=3, C=6, D=4, E=9}
+            valorVariaveis.put(expressao.charAt(i), valor); // adiciona ao dicionário
           }
         }}
           break;
       
       case 3:
-        if (flag != false){
+        if (flag != false){ // não faz a opção caso a flag seja falsa
         System.out.println("Converte Pósfixa");
         posfixa = ConvertePosfixa(expressao);
         System.out.printf("posfixa = %s",posfixa);
@@ -218,7 +216,7 @@ class Main {
         System.out.println("Calcula Resultado");
         
         
-        for (int i=0; i<posfixa.length(); i++){
+        for (int i=0; i<posfixa.length(); i++){ // for que percorre cada char de posfixa
           if (operacoes.indexOf(posfixa.charAt(i)) == -1)
             variaveis.push(valorVariaveis.get(posfixa.charAt(i)));
             
