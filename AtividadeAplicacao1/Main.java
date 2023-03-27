@@ -57,6 +57,10 @@ class Main {
 					}
 				}
 			}
+			if (i == exp.length()-1) {
+				System.out.print("Operador não pode ser ultimo caractere da expressão, expressão inválida.");
+				return false;
+			}
 			}
 		}
 		if (contVariavel == 0) {
