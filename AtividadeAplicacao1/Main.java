@@ -46,6 +46,17 @@ class Main {
 				System.out.print("Operando ou operador não reconhecido, expressão inválida.");
 				return false;
 			}
+			else {
+				if(valido == 1 && i < exp.length()-1) {
+					for(int k = 0;k < 5; k++) {
+						if((exp.charAt(i+1))== opValidos[k]) {
+							System.out.print("Dois operadores seguidos, expressão inválida.");
+							return false;	
+						}
+						
+					}
+				}
+			}
 			}
 		}
 		if (contVariavel == 0) {
