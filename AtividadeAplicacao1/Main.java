@@ -74,7 +74,7 @@ class Main {
 		System.out.print("Expressão válida.");
 		return true;
 	}
-  //Etapa de parentização e conversão da expressão
+  //Etapa de parentização e conversão da expressão para pósfixa
 	public static String ConvertePosfixa(String exp) {
 		Pilha<Character> pilha1 = new Pilha<Character>();
 		String expConvertida = "";
