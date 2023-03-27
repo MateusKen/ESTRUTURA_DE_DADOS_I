@@ -1,17 +1,6 @@
 import java.util.Scanner;
 
-public class Main{
-
-	public static void main(String[] args) {
-		System.out.print("Digite a expressão matemática em notação infixa: ");
-		Scanner s = new Scanner(System.in);
-		String exp = s.nextLine();
-		s.close();
-		validaExp(exp);
-			//System.out.print("expressao valida ");
-		//else
-			//System.out.print("expressao invalida ");
-	}
+public class validaExp{
 
 	public static boolean validaExp(String exp) {
 		char[] opValidos = new char[5]; 
