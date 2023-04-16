@@ -139,13 +139,17 @@ class Main {
           int j = 0;
           int tamD = d.size(); // variável guarda o size() para usar o valor no while
           while ( j < tamD) {
-        	  if (d.dequeueRight() == 1) {
+        	  if (d.getRight() == 1) {
+        		  d.dequeueRight();
         		  f1.enqueueLeft(d.dequeueRight());       		  
         	  }
-        	  if (d.dequeueRight() == 2) {
-        		  f2.enqueueLeft(d.dequeueRight());       		  
-        	  }
-        	  if (d.dequeueRight() == 3) {
+        	  else if (d.getRight() == 2) {
+        		  d.dequeueRight();
+        			  f2.enqueueLeft(d.dequeueRight());       		  
+        		  }
+        	  
+        	  else if (d.getRight() == 3) {
+        		  d.dequeueRight();
         		  f3.enqueueLeft(d.dequeueRight());       		  
         	  }
         	  j+=2;
