@@ -144,7 +144,9 @@ class Main {
           else {
           int j = 0;
           int tamD = d.size(); // variável guarda o size() para usar o valor no while
+          
           while ( j < tamD) {
+            //Enfileira o valor na fila correta indicada pelo indicador
         	  if (d.getRight() == 1) {
         		  d.dequeueRight();
         		  f1.enqueueLeft(d.dequeueRight());       		  
@@ -158,14 +160,16 @@ class Main {
         		  d.dequeueRight();
         		  f3.enqueueLeft(d.dequeueRight());       		  
         	  }
+            //incrementa indice de 2 em 2 para verificar os identificadores
         	  j+=2;
           }
           break;
           }
         case 4:
           System.out.println("Imprime as filas geradas: ");
+          //Avisa caso todos os fluxos estiverem vazios
           if (f1.isEmpty() && f2.isEmpty() && f3.isEmpty()) {
-        	  System.out.println("Filas vazias");
+        	  System.out.println("Fluxos vazios");
         	  break;
           }
           else {
@@ -175,6 +179,7 @@ class Main {
         	  else {
         		  System.out.print("Fluxo 1:");
         		  System.out.print("[");
+              //Enqunato fila nao esta vazia imprime cada elemento e desenfileira
         		  while(f1.isEmpty() == false) {
         			  if (f1.size()!= 1) {
         				  System.out.print(f1.dequeueRight()+"|");
@@ -191,6 +196,7 @@ class Main {
         	  else {
         		  System.out.print("Fluxo 2:");
         		  System.out.print("[");
+              //Enqunato fila nao esta vazia imprime cada elemento e desenfileira
         		  while(f2.isEmpty() == false) {
         			  if (f2.size()!= 1) {
         				  System.out.print(f2.dequeueRight()+"|");
@@ -207,6 +213,7 @@ class Main {
         	  else {
         		  System.out.print("Fluxo 3:");
         		  System.out.print("[");
+              //Enqunato fila nao esta vazia imprime cada elemento e desenfileira
         		  while(f3.isEmpty() == false) {
         			  if (f3.size()!= 1) {
         				  System.out.print(f3.dequeueRight()+"|");
