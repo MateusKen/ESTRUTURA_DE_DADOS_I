@@ -13,7 +13,6 @@ class Main {
     Deque d = new Deque();
     String opcoes = "\nMenu de Opções\n\n1 - Lê canal compartilhado\n2 - Imprime canal compartilhado\n3 - Desefileira canal compartilhado\n4 - Imprime as filas geradas\n5 - Encerra\n\n Opção:";
     Scanner ent = new Scanner(System.in);
-    String canal = "[";
     int opcao = 0;
     do{
       System.out.print(opcoes);
@@ -113,14 +112,19 @@ class Main {
           else
         	  System.out.println("Imprime canal compartilhado: ");
           	  int tam = d.size(); // variável guarda o size() para usar o valor no for
+              String canal = "[";
+              Deque temp = new Deque();
               for (int i = 0; i < tam; i++){
+                temp.enqueueRight(d.dequeueRight());
             	  if (i%2 == 0)
-            		  canal += "["+d.dequeueRight()+",";
+            		  canal += "["+temp.getRight()+",";
             	  if (i%2 != 0)
-            		  canal += d.dequeueRight()+"],";
+            		  canal += temp.getRight()+"],";
               }
-              canal += "]";
               System.out.print(canal);
+              for (int i = 0; i < tam; i++){
+                d.enqueueRight(temp.dequeueRight());
+              }
               break;
         case 3:
           System.out.println("Desenfileira canal compartilhado: ");
