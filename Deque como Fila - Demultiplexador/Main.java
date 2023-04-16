@@ -160,10 +160,10 @@ class Main {
           }
           else {
         	  if(f1.isEmpty()) {
-        		  System.out.println("Fila 1 vazia");
+        		  System.out.println("Fluxo 1 vazio");
         	  }
         	  else {
-        		  System.out.print("Fila 1:");
+        		  System.out.print("Fluxo 1:");
         		  System.out.print("[");
         		  while(f1.isEmpty() == false) {
         			  if (f1.size()!= 1) {
@@ -176,10 +176,10 @@ class Main {
 
         	 }
         	  if(f2.isEmpty()) {
-        		  System.out.println("Fila 2 vazia");
+        		  System.out.println("Fluxo 2 vazio");
         	  }
         	  else {
-        		  System.out.print("Fila 2:");
+        		  System.out.print("Fluxo 2:");
         		  System.out.print("[");
         		  while(f2.isEmpty() == false) {
         			  if (f2.size()!= 1) {
@@ -192,10 +192,10 @@ class Main {
 
         	 }
         	  if(f3.isEmpty()) {
-        		  System.out.println("Fila 3 vazia");
+        		  System.out.println("Fluxo 3 vazio");
         	  }
         	  else {
-        		  System.out.print("Fila 3:");
+        		  System.out.print("Fluxo 3:");
         		  System.out.print("[");
         		  while(f3.isEmpty() == false) {
         			  if (f3.size()!= 1) {
