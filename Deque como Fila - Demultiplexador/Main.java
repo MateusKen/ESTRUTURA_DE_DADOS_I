@@ -11,6 +11,9 @@ import java.util.Scanner;
 class Main {
   public static void main(String[] args) {
     Deque d = new Deque();
+    Deque f1 = new Deque();
+    Deque f2 = new Deque();
+    Deque f3 = new Deque();
     String opcoes = "\nMenu de Opções\n\n1 - Lê canal compartilhado\n2 - Imprime canal compartilhado\n3 - Desefileira canal compartilhado\n4 - Imprime as filas geradas\n5 - Encerra\n\n Opção:";
     Scanner ent = new Scanner(System.in);
     int opcao = 0;
@@ -127,10 +130,85 @@ class Main {
               }
               break;
         case 3:
-          System.out.println("Desenfileira canal compartilhado: ");
+          System.out.println("Desefileira canal compartilhado: ");
+          if (d.isEmpty() == true) {
+        	  System.out.println("Canal compartilhado vazio ");
+        	  break;
+          }
+          else {
+          int j = 0;
+          int tamD = d.size(); // variável guarda o size() para usar o valor no while
+          while ( j < tamD) {
+        	  if (d.dequeueRight() == 1) {
+        		  f1.enqueueLeft(d.dequeueRight());       		  
+        	  }
+        	  if (d.dequeueRight() == 2) {
+        		  f2.enqueueLeft(d.dequeueRight());       		  
+        	  }
+        	  if (d.dequeueRight() == 3) {
+        		  f3.enqueueLeft(d.dequeueRight());       		  
+        	  }
+        	  j+=2;
+          }
           break;
+          }
         case 4:
           System.out.println("Imprime as filas geradas: ");
+          if (f1.isEmpty() && f2.isEmpty() && f3.isEmpty()) {
+        	  System.out.println("Filas vazias");
+        	  break;
+          }
+          else {
+        	  if(f1.isEmpty()) {
+        		  System.out.println("Fila 1 vazia");
+        	  }
+        	  else {
+        		  System.out.print("Fila 1:");
+        		  System.out.print("[");
+        		  while(f1.isEmpty() == false) {
+        			  if (f1.size()!= 1) {
+        				  System.out.print(f1.dequeueRight()+"|");
+        			  }
+        			  else {
+        				  System.out.println(f1.dequeueRight()+"]");
+        			  }
+        		  }
+
+        	 }
+        	  if(f2.isEmpty()) {
+        		  System.out.println("Fila 2 vazia");
+        	  }
+        	  else {
+        		  System.out.print("Fila 2:");
+        		  System.out.print("[");
+        		  while(f2.isEmpty() == false) {
+        			  if (f2.size()!= 1) {
+        				  System.out.print(f2.dequeueRight()+"|");
+        			  }
+        			  else {
+        				  System.out.println(f2.dequeueRight()+"]");
+        			  }
+        		  }
+
+        	 }
+        	  if(f3.isEmpty()) {
+        		  System.out.println("Fila 3 vazia");
+        	  }
+        	  else {
+        		  System.out.print("Fila 3:");
+        		  System.out.print("[");
+        		  while(f3.isEmpty() == false) {
+        			  if (f3.size()!= 1) {
+        				  System.out.print(f3.dequeueRight()+"|");
+        			  }
+        			  else {
+        				  System.out.println(f3.dequeueRight()+"]");
+        			  }
+        		  }
+
+        	 }
+          }
+          
           break;
         case 5:
           System.out.println("Encerra o programa");
