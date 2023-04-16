@@ -228,7 +228,7 @@ class Main {
           
           break;
         case 5:
-          System.out.println("Encerra o programa");
+          System.out.println("Programa encerrado");
           ent.close();
           break;
       }
