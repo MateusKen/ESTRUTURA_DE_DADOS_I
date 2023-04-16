@@ -116,17 +116,23 @@ class Main {
         	  System.out.println("Imprime canal compartilhado: ");
           	  int tam = d.size(); // variável guarda o size() para usar o valor no for
               String canal = "[";
-              Deque temp = new Deque();
+              Deque temp = new Deque(); //deque temporario para guardar os valores do dequeue do deque principal
               for (int i = 0; i < tam; i++){
-                temp.enqueueRight(d.dequeueRight());
+                temp.enqueueRight(d.dequeueRight()); //guarda o valor
             	  if (i%2 == 0)
-            		  canal += "["+temp.getRight()+",";
+            		  canal += "["+temp.getRight()+","; //guarda na string o valor guardado no deque temporario
             	  if (i%2 != 0)
+                  if (i == tam-1){
+                    canal += temp.getRight()+"]"; 
+                  }  
+                  else{
             		  canal += temp.getRight()+"],";
+                  }
               }
-              System.out.print(canal);
+              canal += "]";
+              System.out.print(canal); //printa a string com os valores do deque
               for (int i = 0; i < tam; i++){
-                d.enqueueRight(temp.dequeueRight());
+                d.enqueueRight(temp.dequeueRight()); //guarda os valores de volta do deque principal
               }
               break;
         case 3:
