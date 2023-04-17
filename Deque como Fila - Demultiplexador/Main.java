@@ -163,6 +163,7 @@ class Main {
             //incrementa indice de 2 em 2 para verificar os identificadores
         	  j+=2;
           }
+          System.out.println("Canal desenfileirado ");
           break;
           }
         case 4:
