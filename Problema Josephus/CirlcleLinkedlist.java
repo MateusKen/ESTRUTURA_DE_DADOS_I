@@ -1,11 +1,9 @@
-package TesteListaCircular;
-
-public class CircleLinkedList {
+public class CircleLinkedlist {
 	private Node head;
 	private Node tail;
 	private int count;
 	
-	public CircleLinkedList() {
+	public CircleLinkedlist() {
 		head = tail = null;
 		count = 0;
 	}
@@ -23,10 +21,10 @@ public class CircleLinkedList {
 		return count;
 	}
 	
-	public boolean insertTail(int id){
+	public boolean insertTail(int id, String nome){
 		Node aux;
 	    if (!isFull()){ // Não há espaço de memória
-	      aux = new Node(id, null);
+	      aux = new Node(id, nome, null);
 	      if (isEmpty()){ // Lista está vazia insere no cabeça
 	    	aux.setProx(head);
 	        head = tail = aux;
@@ -41,10 +39,10 @@ public class CircleLinkedList {
 	    else return false; 
 	};
 	
-	public boolean insertHead(int id){
+	public boolean insertHead(int id, String nome){
 		Node aux;
 	    if (!isFull()){
-	      aux = new Node(id, null);
+	      aux = new Node(id, nome, null);
 	      if (isEmpty()){ // Lista está vazia
 		    aux.setProx(head);
 		    head = tail = aux;
