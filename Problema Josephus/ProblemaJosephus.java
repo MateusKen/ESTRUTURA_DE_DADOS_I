@@ -1,31 +1,48 @@
 import java.util.Scanner;
 
-class ProblemaJosephus {
+class Main {
   public static void main(String[] args) {
     String opcoes = "\nMenu de Opções\n\n1 - Iniciar: cria uma lista vazia;\n2 - Inserir soldado\n3 - Sortear número\n4 - Retirar soldado\n5 - Mostrar os soldados\n6 - Encerra\n Opção:";
     Scanner ent = new Scanner(System.in);
-    Scanner input = new Scanner(System.in);
+    
+    CircleLinkedlist lista = null;
     int opcao = 0;
+    boolean flag = false;
     do{
       System.out.print(opcoes);
       opcao = ent.nextInt();
       switch(opcao){
         case 1:
           System.out.println("Iniciar: cria uma lista vazia");
-          CircleLinkedlist l = new CircleLinkedlist();
+          lista = new CircleLinkedlist();
+          if (lista != null) System.out.print("Lista criada com sucesso.");
+          else System.out.print("Problema na criação da lista. ");
           break;
         case 2:
-          System.out.println("Inserir soldado\n");
-          int codigo = 0;
-          String nome;
-          while (codigo != -1){
-          System.out.println("Digite o código do soldado (digitar -1 vai parar o loop):\n");
-          codigo = input.nextInt();
-          System.out.println("Digite o nome do soldado:\n");
-          nome = input.nextLine();
-          l.insertHead(codigo, nome);
+          if (lista == null)
+          {
+            System.out.print("Crie uma lista antes!\n");
+            break;
           }
+          else
+          {
+          System.out.println("Inserir soldado\n");
+          Scanner inputStr = new Scanner(System.in);
+          Scanner inputInt = new Scanner(System.in);
+          int codigo;
+          String nome;
+          while (true)
+          {
+          System.out.println("Digite o código do soldado (digitar -1 vai parar o loop): ");
+          codigo = inputInt.nextInt();
+          if (codigo == -1) break;
+          System.out.println("Digite o nome do soldado: ");
+          nome = inputStr.nextLine();
+            
+          lista.insertHead(codigo, nome);
+          }}
           break;
+          
         case 3:
           System.out.println("Sortear número");
           break;
