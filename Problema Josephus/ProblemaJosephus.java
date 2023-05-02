@@ -39,7 +39,7 @@ class Main {
           System.out.println("Digite o nome do soldado: ");
           nome = inputStr.nextLine();
             
-          lista.insertHead(codigo, nome);
+          lista.insertTail(codigo, nome);
           }}
           break;
           
@@ -51,6 +51,7 @@ class Main {
           break;
         case 5:
           System.out.println("Mostrar os soldados");
+          lista.print();
           break;
         case 6:
           System.out.println("Encerra o programa");
