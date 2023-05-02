@@ -113,16 +113,19 @@ public class CircleLinkedlist {
 	
 	public void print(){
 		Node pAnda; 
-	    System.out.print("L: [ ");
+	    System.out.print("Lista de soldados: [ ");
 	    if (!isEmpty()) {
 	    	pAnda = head;
 	    	while (pAnda.getProx() != head) {
 	    		System.out.print(pAnda.getId()+" ");
+	    		System.out.print(pAnda.getNome() + ", ");
 	    		pAnda = pAnda.getProx();
+	    	
 	    	}
 	    	System.out.print(pAnda.getId()+" ");
+	    	System.out.print(pAnda.getNome()+" ");
 	    }
-	    System.out.print("], Qtde.: " + count + ".\n");
+	    System.out.print("]\n");
 	}
 
 	
