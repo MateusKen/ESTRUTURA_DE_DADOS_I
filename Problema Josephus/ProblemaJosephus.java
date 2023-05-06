@@ -1,9 +1,11 @@
 import java.util.Scanner;
+import java.util.Random;
 
 class Main {
   public static void main(String[] args) {
     String opcoes = "\nMenu de Opções\n\n1 - Iniciar: cria uma lista vazia;\n2 - Inserir soldado\n3 - Sortear número\n4 - Retirar soldado\n5 - Mostrar os soldados\n6 - Encerra\n Opção:";
     Scanner ent = new Scanner(System.in);
+    int num_sorteado = -1;// Se num_sorteado == -1 --> erro
     
     CircleLinkedlist lista = null;
     int opcao = 0;
@@ -45,6 +47,11 @@ class Main {
           
         case 3:
           System.out.println("Sortear número");
+          Random r = new Random();
+          int low = 1;
+          int high = 101;
+          num_sorteado = r.nextInt(high-low) + low;
+          System.out.println("Número sorteado:"+num_sorteado);
           break;
         case 4:
           System.out.println("Retirar soldado");
