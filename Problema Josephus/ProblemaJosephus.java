@@ -59,6 +59,13 @@ class Main {
         case 5:
           System.out.println("Mostrar os soldados");
           lista.print();
+          if (lista.getCount() == 1) {
+        	  System.out.print("O soldado ganhador é o: ");
+        	  lista.print();
+          }
+          else {
+        	  System.out.println("Ainda não temos um soldado ganhador.");
+          }
           break;
         case 6:
           System.out.println("Encerra o programa");
