@@ -128,7 +128,10 @@ public class CircleLinkedlist {
 	    System.out.print("]\n");
 	}
 
-	
+  public Node getHead(){
+    return head;
+  }
+  
 	public void clear(){
 		Node pAnt, pAnda = head;
 		
