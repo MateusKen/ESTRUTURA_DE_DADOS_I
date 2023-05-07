@@ -6,10 +6,11 @@ class Main {
     String opcoes = "\nMenu de Opções\n\n1 - Iniciar: cria uma lista vazia;\n2 - Inserir soldado\n3 - Sortear número\n4 - Retirar soldado\n5 - Mostrar os soldados\n6 - Encerra\n Opção:";
     Scanner ent = new Scanner(System.in);
     int num_sorteado = -1;// Se num_sorteado == -1 --> erro
-    
     CircleLinkedlist lista = null;
     int opcao = 0;
+    Node head = null;
     boolean flag = false;
+    boolean flag2 = false;
     do{
       System.out.print(opcoes);
       opcao = ent.nextInt();
@@ -53,22 +54,42 @@ class Main {
           num_sorteado = r.nextInt(high-low) + low;
           System.out.println("Número sorteado:"+num_sorteado);
           break;
+          
+          
         case 4:
           System.out.println("Retirar soldado");
+          
+          if (lista.getCount() == 1) {
+        	  System.out.print("O soldado ganhador é: " + head.getNome());
+            break;
+          }
+
+          if (flag2 == false){
+            head = lista.getHead();
+            flag2 = true;
+          }
+
+          int i;
+          for (i = 0; i < num_sorteado; i++){
+            head = head.getProx();
+          }
+          
+          int id = head.getId();
+          lista.remove(id);
+          String nm = head.getNome();
+          System.out.println("Soldado eliminado: " + nm);
+
+          head = head.getProx();
+            
           break;
+          
         case 5:
           System.out.println("Mostrar os soldados");
           lista.print();
-          if (lista.getCount() == 1) {
-        	  System.out.print("O soldado ganhador é o: ");
-        	  lista.print();
-          }
-          else {
-        	  System.out.println("Ainda não temos um soldado ganhador.");
-          }
           break;
+          
         case 6:
-          System.out.println("Encerra o programa");
+          System.out.println("Programa encerrado");
           break;
       }
     }while (opcao != 6);
